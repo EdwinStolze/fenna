@@ -1,0 +1,22 @@
+.emphasize {
+  background-color: rgba(209, 211, 178, 0.3);
+  padding: 1em;
+
+}
+
+.textEmphasize {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #9fa088;
+  text-transform: uppercase;
+}
+
+.align_left {
+	float: left;
+	padding: 0 2em 2em 0;
+}
+
+.align_right {
+	float: right;
+	padding: 0  0 2em 2em ;
+}
