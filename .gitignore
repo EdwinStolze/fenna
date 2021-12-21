@@ -44,3 +44,5 @@ site/install/
 index.php
 site/config.php
 node_modules/
+werkmap/
+
