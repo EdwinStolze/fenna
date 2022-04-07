@@ -1,13 +1,21 @@
 <header id="main-header">
 	<div class="l-container">
-		<ul>
+		<ul class="langswitch">
 			<?php
-				// foreach($languages as $language) {
-				// 	if(!$page->viewable($language)) continue;
-				// 	if($language->id == $user->language->id) continue;
-				// 	$url = $page->localUrl($language); 
-				// 	echo "<li class=\"langswitch\"><a href='$url'>$language->title	</a></li>";
-				// }
+				foreach($languages as $language) {
+					if($language->id == $user->language->id) continue;
+					// if(!$page->viewable($language)) continue;
+					if(!$page->viewable($language)) {
+						$url = $pages->get("/")->localUrl($language);
+					} else {
+						$url = $page->localUrl($language);
+					}
+					$flag = file_get_contents('../../../public/images/nederlands.svg'); 
+					if ($language->name == 'en') {
+						$flag = file_get_contents('../../../public/images/english.svg');
+					} 
+					echo "<li><a href='$url'>{$flag}</a></li>";
+				}
 			?>
 		</ul>
 		<ul>

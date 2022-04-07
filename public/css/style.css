@@ -1,6 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
 html, body, div, span, applet, object, iframe,
 h1, h2, legend, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -449,8 +449,8 @@ textarea {
 
 .l-container {
   margin: 0 auto;
-  width: 1020px;
-  width: 1280px;
+  /* width: 1020px; */
+  max-width: 1280px;
   padding: 0 3em;
 }
 
@@ -923,4 +923,14 @@ ul.menu > li:hover > ul {
   box-shadow: none;
   color: white;
   width: 50%;
+}
+
+.langswitch li {
+    display: block;
+    width: 30px;
+    height: 30px
+}
+
+.main img {
+  max-width: 100%;
 }
