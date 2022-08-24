@@ -805,16 +805,16 @@ ul.menu > li:hover > ul {
 }
 
 .content-body {
-  -webkit-columns: 20em 2;
-  -moz-columns: 20em 2;
-  -ms-columns: 20em 2;
-  -o-columns: 20em 2;
-  columns: 20em 2;
   -webkit-column-gap: 5em;
   -moz-column-gap: 5em;
   -ms-column-gap: 5em;
   -o-column-gap: 5em;
   column-gap: 5em;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -ms-column-count: 2;
+  -o-column-count: 2;
+  column-count: 2;
 }
 
 .content-body.one-column {
