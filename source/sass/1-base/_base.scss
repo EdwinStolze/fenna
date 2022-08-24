@@ -1,0 +1,66 @@
+
+html {
+    font-family: $font-family;
+    color: $font-color;
+    font-weight: 300;
+    font-size: $font-size-body;
+}
+
+body {
+    line-height: $line-height;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-headings;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: $headings-color;
+}
+
+
+@each $heading_name, $heading_attributes in $headings {
+    #{$heading_name} {
+        @each $attr_name, $attr_value in $heading_attributes {
+            #{$attr_name}: $attr_value;
+        }
+    }
+}
+
+.banned {
+    @include banned();
+    @each $key, $value in $margins {
+        &--#{$key} {
+            @include banned($key);
+        }
+    }
+}
+
+.padded {
+    @include padded();
+    @each $key, $value in $margins {
+        &--#{$key} {
+            @include padded($key);
+        }
+    }
+}
+
+.spaced {
+    @include spaced();
+    @each $key, $value in $margins {
+        &--#{$key} {
+            @include spaced($key);
+        }
+    }
+}
+
+@mixin bp($size) {
+    @media screen and (min-width: map-get($breakpoints, $size)) {
+        @content;
+    }
+}
+
+@include bp(40px) {
+    body {
+        background-color: yellowgreen;
+    }
+};

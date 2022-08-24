@@ -1,0 +1,29 @@
+$primary-color: #d1d3b3;
+$primary-dark-color: #9fa088;
+$secondary-color: $primary-dark-color;
+$font-color: #333;
+$white: white;
+$gray-dark:#333;
+$grey-light:#999999;
+
+$container-width: 80rem;
+$font-size: 1rem;
+
+h1 {
+    color: #d1d3b3;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Open Sans", sans-serif;
+    color: #9fa088;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin: 0 0 0.5em 0;
+}
+
+h3 {
+
+}
