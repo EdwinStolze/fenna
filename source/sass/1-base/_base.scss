@@ -1,66 +1,52 @@
 
-html {
-    font-family: $font-family;
-    color: $font-color;
-    font-weight: 300;
-    font-size: $font-size-body;
-}
 
-body {
-    line-height: $line-height;
-}
+.topbar {
+    position: relative;
+    &__wrapper {
+        height: 5rem;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+    }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $font-family-headings;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: $headings-color;
-}
+    &__left {
+        position: relative;
+        height: 100%;
+        width: 40px;
+        
+        background-color: green;
+    }
 
+    &__right {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
 
-@each $heading_name, $heading_attributes in $headings {
-    #{$heading_name} {
-        @each $attr_name, $attr_value in $heading_attributes {
-            #{$attr_name}: $attr_value;
-        }
+        background-color: lightgreen;
+    }
+    svg {
+        height: 100%;
     }
 }
 
-.banned {
-    @include banned();
-    @each $key, $value in $margins {
-        &--#{$key} {
-            @include banned($key);
-        }
-    }
+.container {
+    position: relative;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.7rem 0 1.7rem;
+
+    // background-color: lightcyan;
 }
 
-.padded {
-    @include padded();
-    @each $key, $value in $margins {
-        &--#{$key} {
-            @include padded($key);
-        }
+
+.socials {
+    display: flex;
+    align-items: center;;
+    justify-content: center;
+
+    .social {
+        margin-left: 1em;
     }
 }
-
-.spaced {
-    @include spaced();
-    @each $key, $value in $margins {
-        &--#{$key} {
-            @include spaced($key);
-        }
-    }
-}
-
-@mixin bp($size) {
-    @media screen and (min-width: map-get($breakpoints, $size)) {
-        @content;
-    }
-}
-
-@include bp(40px) {
-    body {
-        background-color: yellowgreen;
-    }
-};

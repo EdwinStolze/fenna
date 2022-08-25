@@ -1,17 +1,9 @@
-<ul class="langswitch">
-    <?php
-        foreach($languages as $language) {
-            if($language->id == $user->language->id) continue;
-            if(!$page->viewable($language)) {
-                $url = $pages->get("/")->localUrl($language);
-            } else {
-                $url = $page->localUrl($language);
-            }
-            $flag = file_get_contents('../assets/nederlands.svg'); 
-            if ($language->name == 'en') {
-                $flag = file_get_contents('../assets/english.svg');
-            } 
-            echo "<li><a href='$url'>{$flag}</a></li>";
-        }
-    ?>
-</ul>
+<?php
+$flag = file_get_contents('../assets/nederlands.svg'); 
+if ($user->language->name == 'en') {
+    $flag = file_get_contents('../assets/english.svg');
+}
+if ($page->viewable($user->language)) {
+    $url = $page->localUrl($user->language);
+    echo "<a href='$url'>{$flag}</a>";
+}

@@ -159,8 +159,8 @@ function svgStore() {
 }
 
 function watch() {
-    gulp.watch('./src/sass/**/*', style);
-    gulp.watch('./src/js/**/*', script);
+    gulp.watch('./source/sass/**/*', style);
+    gulp.watch('./source/js/**/*', script);
 }
 
 exports.style = style;
