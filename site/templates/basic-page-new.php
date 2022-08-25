@@ -32,9 +32,9 @@
         </div>
     </div>
     <nav class="topnav">
-        <?= !$page->render('partials/navigation.php'); ?>
+        <?= $page->render('partials/navigation.php'); ?>
     </nav>
-    <?= !$page->render('partials/header.php'); ?>
+    <?= $page->render('partials/header.php'); ?>
     <main>
         <article class="container">
             <h1><?php echo $page->title ; ?></h1>
@@ -48,6 +48,6 @@
             </div>
         </article>
     </main>
-    <?= !$page->render('partials/footer.php'); ?>
+    <?= $page->render('partials/footer.php'); ?>
 </body>
 </html>

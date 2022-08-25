@@ -1,5 +1,5 @@
 <?php
-$out = "<ul class='navigation'>";
+$out = "<ul class='menu'>";
 $homePage = $pages->get('/')->url ;
 $class = $page ===  $pages->get('/') ? 'class="is-active"' : ""; 
 $out .= "<li><a {$class} href='{$homePage}'>home</a></li>";
