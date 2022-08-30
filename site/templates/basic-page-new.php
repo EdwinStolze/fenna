@@ -15,7 +15,7 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="stylesheet" href="<?= $config->urls->templates ?>styles/main.css">
-    <link rel="manifest" href="site.webmanifest">
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
     <meta name="theme-color" content="#fafafa">
 </head>
 <body>
@@ -49,5 +49,11 @@
         </article>
     </main>
     <?= $page->render('partials/footer.php'); ?>
+    <script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous">
+    </script>
+    <script src="<?= $config->urls->templates ?>scripts/main.js"></script>
 </body>
 </html>

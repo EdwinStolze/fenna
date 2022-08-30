@@ -14,19 +14,24 @@ const svgstoring = require('gulp-svgstore');
 const cssmin     = require('gulp-cssmin');
 
 var js_stream = [
-    './src/js/source.js',
+    'node_modules/foundation-sites/dist/js/plugins/foundation.core.js',
+    // 'node_modules/foundation-sites/dist/js/plugins/foundation.dropdownMenu.js',
+    'node_modules/foundation-sites/dist/js/plugins/foundation.accordionMenu.js',
+    'node_modules/foundation-sites/dist/js/plugins/foundation.util.keyboard.js',
+    // 'node_modules/foundation-sites/dist/js/plugins/foundation.util.box.js',
+    'node_modules/foundation-sites/dist/js/plugins/foundation.util.nest.js',
+    // 'node_modules/foundation-sites/dist/js/plugins/foundation.util.touch.js',
+    './source/js/source.js',
 ];
 
 function script() {
     return gulp.src(js_stream)
         .pipe(concat('script.js'))
-        // .pipe(rename({prefix: 'delidelicious.'}))
         .pipe(rename("main.js"))
         // .pipe(uglify())
         .pipe(gulp.dest('site/templates/scripts/'))
         .pipe(notify({ message : 'all done with js files concatting'}));
 }
-
 
 function minjs() {
     return gulp.src(js_stream)
@@ -42,7 +47,8 @@ function style() {
         .src('source/sass/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
-            style: "expanded"
+            style: "expanded",
+            includePaths: ['./node_modules/foundation-sites/scss']
         }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('site/templates/styles/'))

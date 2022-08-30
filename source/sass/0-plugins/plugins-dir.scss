@@ -1,1 +1,5 @@
 @import 'fonts';
+@import 'foundation-settings';
+@import 'foundation';
+
+@include foundation-everything;
